@@ -1,0 +1,34 @@
+<mvc:View xmlns:core="sap.ui.core" controllerName="checkout.controller.Start"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:tnt="sap.tnt"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+
+    <Page id="_IDGenPage1" showHeader="false">
+        <html:header>
+            <html:div class="loginLogo">
+                <html:img src="/sap/bc/ui5_ui5/tqa/launchpad/img/logobranco.png" width="84" style="margin: 0 auto;" />
+            </html:div>
+        </html:header>
+
+        <content>
+            <FlexBox id="_IDGenFlexBox1" alignItems="Center" justifyContent="Center" height="100%" width="auto" direction="Column">
+                <ObjectHeader id="largeTitle" title="Por favor aguarde" height="80px" width="80px" titleAlignment="Center"/>
+
+                <core:Icon id="iconVolta" src="sap-icon://repost" size="15rem" color="white" class="sapUiSmallMarginBottom" visible="false" />
+
+                <Text id="matriculaText" visible="false" class="setFontSize"/>
+                <ProgressIndicator id="progressIndicator" width="400px" height="20px" showValue="true" state="Success" visible="false"/>
+                
+                <tnt:InfoLabel id="printInfoLabel" text="Por favor confirme se foram impressos todos os documentos necessários!" icon="sap-icon://alert" renderMode="Narrow" colorScheme="1" visible="false"/>
+                
+                <HBox id="buttonContainer" justifyContent="Center" class="sapUiSmallMarginTop">
+                    <Button id="btConfirm" text="Confirmo" type="Accept" visible="false" press="onConfirmPrint('1')"/>
+                    <Button id="btCancel" text="Não Confirmo" type="Reject" visible="false" press="onConfirmPrint('2')"/>
+                </HBox>
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>
